@@ -546,6 +546,57 @@ section {
 }
 
 /* Responsive adjustments for floating icons */
+@media (max-width: 968px) {
+
+    /* Adjust icon positioning when layout switches to single column */
+    .floating-icon {
+        width: 45px;
+        height: 45px;
+    }
+
+    /* Tighten the circle around the image */
+    .icon-1 {
+        top: 5%;
+        right: 10%;
+    }
+
+    .icon-2 {
+        top: 20%;
+        right: 0%;
+    }
+
+    .icon-3 {
+        top: 50%;
+        right: -3%;
+        transform: translateY(-50%);
+    }
+
+    .icon-4 {
+        bottom: 20%;
+        right: 0%;
+    }
+
+    .icon-5 {
+        bottom: 5%;
+        right: 10%;
+    }
+
+    .icon-6 {
+        bottom: 5%;
+        left: 10%;
+    }
+
+    .icon-7 {
+        bottom: 20%;
+        left: 0%;
+    }
+
+    .icon-8 {
+        top: 20%;
+        left: 0%;
+    }
+}
+
 @media (max-width: 768px) {
     .floating-icon {
         width: 40px;
@@ -559,6 +610,47 @@ section {
 
     .floating-icon svg text {
         font-size: 20px;
+    }
+
+    /* Further adjust for tablet */
+    .icon-1 {
+        top: 8%;
+        right: 8%;
+    }
+
+    .icon-2 {
+        top: 25%;
+        right: 2%;
+    }
+
+    .icon-3 {
+        top: 50%;
+        right: 0%;
+    }
+
+    .icon-4 {
+        bottom: 25%;
+        right: 2%;
+    }
+
+    .icon-5 {
+        bottom: 8%;
+        right: 8%;
+    }
+
+    .icon-6 {
+        bottom: 8%;
+        left: 8%;
+    }
+
+    .icon-7 {
+        bottom: 25%;
+        left: 2%;
+    }
+
+    .icon-8 {
+        top: 25%;
+        left: 2%;
     }
 }
 
@@ -577,20 +669,45 @@ section {
         font-size: 18px;
     }
 
-    /* Adjust positioning for smaller screens */
-    .icon-1,
-    .icon-4 {
+    /* Adjust positioning for mobile screens */
+    .icon-1 {
+        top: 10%;
+        right: 5%;
+    }
+
+    .icon-2 {
+        top: 30%;
+        right: 0%;
+    }
+
+    .icon-3 {
+        top: 50%;
         right: -2%;
     }
 
-    .icon-2,
-    .icon-3 {
-        right: -8%;
+    .icon-4 {
+        bottom: 30%;
+        right: 0%;
     }
 
-    .icon-5,
+    .icon-5 {
+        bottom: 10%;
+        right: 5%;
+    }
+
     .icon-6 {
-        left: -2%;
+        bottom: 10%;
+        left: 5%;
+    }
+
+    .icon-7 {
+        bottom: 30%;
+        left: 0%;
+    }
+
+    .icon-8 {
+        top: 30%;
+        left: 0%;
     }
 }
 
