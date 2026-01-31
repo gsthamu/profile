@@ -445,6 +445,155 @@ section {
     box-shadow: var(--shadow-xl);
 }
 
+/* Floating Tech Icons */
+.floating-icon {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    animation: orbit 20s linear infinite;
+    z-index: 2;
+}
+
+.floating-icon:hover {
+    background: rgba(102, 126, 234, 0.2);
+    border-color: rgba(102, 126, 234, 0.4);
+    transform: scale(1.1) translateY(-5px);
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+}
+
+.floating-icon svg {
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+/* Icon Positioning - Circular arrangement (8 icons) */
+.icon-1 {
+    top: 0%;
+    right: 15%;
+    animation-delay: 0s;
+}
+
+.icon-2 {
+    top: 15%;
+    right: -5%;
+    animation-delay: 2.5s;
+}
+
+.icon-3 {
+    top: 50%;
+    right: -8%;
+    transform: translateY(-50%);
+    animation-delay: 5s;
+}
+
+.icon-4 {
+    bottom: 15%;
+    right: -5%;
+    animation-delay: 7.5s;
+}
+
+.icon-5 {
+    bottom: 0%;
+    right: 15%;
+    animation-delay: 10s;
+}
+
+.icon-6 {
+    bottom: 0%;
+    left: 15%;
+    animation-delay: 12.5s;
+}
+
+.icon-7 {
+    bottom: 15%;
+    left: -5%;
+    animation-delay: 15s;
+}
+
+.icon-8 {
+    top: 15%;
+    left: -5%;
+    animation-delay: 17.5s;
+}
+
+/* Orbit Animation */
+@keyframes orbit {
+
+    0%,
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+
+    25% {
+        transform: translateY(-15px) rotate(90deg);
+    }
+
+    50% {
+        transform: translateY(0px) rotate(180deg);
+    }
+
+    75% {
+        transform: translateY(15px) rotate(270deg);
+    }
+}
+
+/* Responsive adjustments for floating icons */
+@media (max-width: 768px) {
+    .floating-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .floating-icon svg {
+        width: 32px;
+        height: 32px;
+    }
+
+    .floating-icon svg text {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .floating-icon {
+        width: 35px;
+        height: 35px;
+    }
+
+    .floating-icon svg {
+        width: 28px;
+        height: 28px;
+    }
+
+    .floating-icon svg text {
+        font-size: 18px;
+    }
+
+    /* Adjust positioning for smaller screens */
+    .icon-1,
+    .icon-4 {
+        right: -2%;
+    }
+
+    .icon-2,
+    .icon-3 {
+        right: -8%;
+    }
+
+    .icon-5,
+    .icon-6 {
+        left: -2%;
+    }
+}
+
 .scroll-indicator {
     position: absolute;
     bottom: var(--spacing-xl);
@@ -832,6 +981,7 @@ section {
 }
 
 .project-card {
+    position: relative;
     padding: var(--spacing-xl);
     background: var(--bg-glass);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -840,6 +990,69 @@ section {
     backdrop-filter: blur(10px);
     display: flex;
     flex-direction: column;
+    overflow: hidden;
+}
+
+/* Project Floating Icons */
+.project-floating-icon {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    animation: float 6s ease-in-out infinite;
+    z-index: 1;
+    opacity: 0.7;
+}
+
+.project-floating-icon:hover {
+    background: rgba(102, 126, 234, 0.15);
+    border-color: rgba(102, 126, 234, 0.3);
+    transform: scale(1.15);
+    opacity: 1;
+}
+
+.project-floating-icon svg {
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+/* Project icon positioning */
+.pf-icon-1 {
+    top: 15px;
+    right: 15px;
+    animation-delay: 0s;
+}
+
+.pf-icon-2 {
+    top: 15px;
+    right: 65px;
+    animation-delay: 1s;
+}
+
+.pf-icon-3 {
+    top: 15px;
+    right: 115px;
+    animation-delay: 2s;
+}
+
+/* Float animation for project icons */
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
 }
 
 .project-card:hover {
@@ -1148,6 +1361,7 @@ section {
         opacity: 0;
         transition: var(--transition-base);
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        z-index: 1000;
     }
 
     .nav-menu.active {
@@ -1178,6 +1392,15 @@ section {
     .skills-grid {
         grid-template-columns: 1fr;
     }
+
+    /* Responsive profile image sizing */
+    .image-wrapper {
+        max-width: 300px;
+    }
+
+    .hero-content {
+        gap: var(--spacing-xl);
+    }
 }
 
 @media (max-width: 480px) {
@@ -1196,6 +1419,11 @@ section {
 
     .about-stats {
         grid-template-columns: 1fr;
+    }
+
+    /* Even smaller profile image on very small screens */
+    .image-wrapper {
+        max-width: 250px;
     }
 }
 
